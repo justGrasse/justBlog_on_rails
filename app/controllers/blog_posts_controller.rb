@@ -10,7 +10,6 @@ class BlogPostsController < ApplicationController
 
   def create
     @blog_post = BlogPost.new(blog_post_params)
-    @blog_post.author_id = 1
     if @blog_post.save
       redirect_to @blog_post, notice: 'justBlog successful!'
     else

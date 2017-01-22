@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root :to => 'blog_posts#index'
+
   # blog_posts routes [  alt:  resources :blog_posts  ]
   get 'blog_posts/' => 'blog_posts#index'
   get 'blog_posts/new' => 'blog_posts#new',
