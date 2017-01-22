@@ -9,7 +9,13 @@ class BlogPostsController < ApplicationController
   end
 
   def create
-    BlogPost.create(params[:blog_post])
+    @blog_post = BlogPost.new(blog_post_params)
+    @blog_post.author_id = 1
+    if @blog_post.save
+      redirect_to @blog_post, notice: 'justBlog successful!'
+    else
+      render :new
+    end
   end
 
   def show
@@ -25,6 +31,12 @@ class BlogPostsController < ApplicationController
 
   def destroy
 
+  end
+
+  private
+
+  def blog_post_params
+    params.require(:blog_post).permit(:title, :body)
   end
 
 end
