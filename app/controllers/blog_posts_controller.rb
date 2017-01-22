@@ -13,7 +13,6 @@ class BlogPostsController < ApplicationController
   end
 
   def show
-
   end
 
   def edit
