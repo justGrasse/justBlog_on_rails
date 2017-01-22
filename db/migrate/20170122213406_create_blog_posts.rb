@@ -3,7 +3,6 @@ class CreateBlogPosts < ActiveRecord::Migration[5.0]
     create_table :blog_posts do |t|
       t.string :title, null: false
       t.string :body, null: false
-      t.integer :author_id, null: false
       t.timestamps
     end
   end
