@@ -1,0 +1,7 @@
+<p id="notice"><%= notice %></p>
+
+<p>justBlog: <%= @blog_post.title %></p>
+<p><%= @blog_post.body %></p>
+
+<%= link_to 'edit', edit_blog_post_path(@blog_post) %>
+<%= link_to 'justHome', blog_posts_path %>

@@ -11,7 +11,7 @@ Rails.application.routes.draw do
         as: 'blog_post'
   get 'blog_posts/:id/edit' => 'blog_posts#edit',
         as: 'edit_blog_post'
-  put 'blog_posts/:id' => 'blog_posts#update'
+  patch 'blog_posts/:id' => 'blog_posts#update'
   delete 'blog_posts/:id' => 'blog_posts#destroy'
 
   # users routes [  alt:  resources :users  ]
