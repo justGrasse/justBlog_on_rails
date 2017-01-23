@@ -19,18 +19,25 @@
   text-align: center;
 }
 
+html {
+  background-color: black;
+}
+
 body{
- font-family:  Lato, Arial, sans-serif;
- background-color: lightblue;
- width: 60%;
+  font-family: 'Slabo 27px', serif;
+  margin-top: 40px;
+  font-family:  Lato, Arial, sans-serif;
+  background-color: lightgray;
+  width: 60%;
+  height: 100%;
 }
 
 .blue-border {
- border: 3px solid darkblue;
- border-radius: 8px;
- width: 30%;
- padding: 10px;
- margin: 10px auto;
+  border: 3px solid black;
+  border-radius: 8px;
+  width: 40%;
+  padding: 10px;
+  margin: 10px auto;
 }
 
 .blog-box *, .blog-form * {
