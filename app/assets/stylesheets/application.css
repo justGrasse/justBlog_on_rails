@@ -13,3 +13,35 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  margin: auto;
+  text-align: center;
+}
+
+body{
+ font-family:  Lato, Arial, sans-serif;
+ background-color: lightblue;
+ width: 60%;
+}
+
+.blue-border {
+ border: 3px solid darkblue;
+ border-radius: 8px;
+ width: 30%;
+ padding: 10px;
+ margin: 10px auto;
+}
+
+.blog-box *, .blog-form * {
+  margin-top: 10px;
+}
+
+h3, p {
+  text-align: left;
+  margin-left: 10px;
+}
+
+h3 {
+    text-decoration: underline;
+}

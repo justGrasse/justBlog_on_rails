@@ -1,7 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<p>justBlog: <%= @blog_post.title %></p>
-<p><%= @blog_post.body %></p>
-
-<%= link_to 'edit', edit_blog_post_path(@blog_post) %>
-<%= link_to 'justHome', blog_posts_path %>
+<div class='blog-box blue-border'>
+  <h3><%= @blog_post.title %></h3>
+  <p><%= @blog_post.body %></p>
+  <%= link_to 'edit', edit_blog_post_path(@blog_post) %>
+  <%= link_to 'destroy', @blog_post, method: :delete, data: { confirm: 'you serious, clark?' } %>
+  <%= link_to 'justHome', blog_posts_path %>
+</div>

@@ -1,29 +1,31 @@
-<%= form_for(blog_post) do |f| %>
+<div class='blog-form blue-border'>
+  <%= form_for(blog_post) do |f| %>
 
-  <% if blog_post.errors.any? %>
-    <div class="errors">
-      <h2><%= pluralize(blog_post.errors, 'justError') %></h2>
+    <% if blog_post.errors.any? %>
+      <div class="errors">
+        <h2><%= pluralize(blog_post.errors, 'justError') %></h2>
+      </div>
+
+      <ul>
+        <% blog_post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :title, 'title' %>
+      <%= f.text_field :title %>
     </div>
 
-    <ul>
-      <% blog_post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
+    <div class="field">
+      <%= f.label :body, 'body' %>
+      <%= f.text_area :body %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit 'justPost' %>
+    </div>
+
   <% end %>
-
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= f.label :body %>
-    <%= f.text_area :body %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit 'justPost' %>
-  </div>
-
-<% end %>
+<div class='blog-form'>
