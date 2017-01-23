@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root :to => 'blog_posts#index'
+
   # blog_posts routes [  alt:  resources :blog_posts  ]
   get 'blog_posts/' => 'blog_posts#index'
   get 'blog_posts/new' => 'blog_posts#new',
@@ -9,7 +11,7 @@ Rails.application.routes.draw do
         as: 'blog_post'
   get 'blog_posts/:id/edit' => 'blog_posts#edit',
         as: 'edit_blog_post'
-  put 'blog_posts/:id' => 'blog_posts#update'
+  patch 'blog_posts/:id' => 'blog_posts#update'
   delete 'blog_posts/:id' => 'blog_posts#destroy'
 
   # users routes [  alt:  resources :users  ]

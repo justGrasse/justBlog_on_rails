@@ -1,4 +1,5 @@
 class BlogPostsController < ApplicationController
+  before_action :set_blog_post, only: [:show, :edit, :update, :destroy]
 
   def index
     @blog_posts = BlogPost.all
@@ -10,7 +11,6 @@ class BlogPostsController < ApplicationController
 
   def create
     @blog_post = BlogPost.new(blog_post_params)
-    @blog_post.author_id = 1
     if @blog_post.save
       redirect_to @blog_post, notice: 'justBlog successful!'
     else
@@ -22,15 +22,19 @@ class BlogPostsController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
-
+    if @blog_post.update(blog_post_params)
+      redirect_to @blog_post, notice: 'justBlog updated!'
+    else
+      render :edit
+    end
   end
 
   def destroy
-
+    @blog_post.destroy
+    redirect_to blog_posts_url
   end
 
   private
@@ -39,16 +43,8 @@ class BlogPostsController < ApplicationController
     params.require(:blog_post).permit(:title, :body)
   end
 
-end
+  def set_blog_post
+    @blog_post = BlogPost.find(params[:id])
+  end
 
-#
-# get 'blog_posts/' => 'blog_posts#index'
-# get 'blog_posts/new' => 'blog_posts#new',
-#       as: 'new_blog_post'
-# post 'blog_posts' => 'blog_posts#create'
-# get 'blog_posts/:id' => 'blog_posts#show',
-#       as: 'blog_post'
-# get 'blog_posts/:id/edit' => 'blog_posts#edit',
-#       as: 'edit_blog_post'
-# put 'blog_posts/:id' => 'blog_posts#update'
-# delete 'blog_posts/:id' => 'blog_posts#destroy'
+end

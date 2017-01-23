@@ -1,6 +1,7 @@
 class StaticController < ApplicationController
-
-  def info
-  end
+   
+  # def index
+  #   redirect_to '/blog_posts'
+  # end
 
 end
